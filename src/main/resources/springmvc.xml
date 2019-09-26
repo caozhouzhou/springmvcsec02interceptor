@@ -25,6 +25,14 @@
     <springmvc:resources mapping="/js/**" location="/js/" />
 
 
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/user/**"/>
+            <!--不拦截的 -->
+            <!--<mvc:exclude-mapping path="/user/e"/>-->
+            <bean id="myInterceptor" class="cn.jdwa.interceptor.MyInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <!-- 开启SpringMVC框架注解的支持 -->
     <mvc:annotation-driven/>
